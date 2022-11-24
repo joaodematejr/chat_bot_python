@@ -1,0 +1,8 @@
+{
+    "BOT": {
+        "nome": "Bot",
+        "treino": "Arquivo para treino",
+        "path_driver": "driver",
+        "usuario": "João"
+    }
+}
