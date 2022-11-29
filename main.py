@@ -14,7 +14,6 @@ driver = webdriver.Chrome()
 trainer = ListTrainer(bot)
 
 nameGroup = "Bot"
-ultimo_texto = ''
 
 conversation = [
     "Oi",
@@ -28,23 +27,27 @@ conversation = [
 
 def listening():
     while True:
-        texto = driver.find_element(By.CSS_SELECTOR, "selectable-text copyable-text").text
+        #_2gzeB
+        #_3xTHG
+        #_33LGR
+        contact = driver.find_element(By.CLASS_NAME, '_33LGR')
+        time.sleep(1)
+        contact2 = driver.find_element_by_css_selector(By.CSS_SELECTOR, 'selectable-text copyable-text')
+        #texto = driver.find_element(By.CSS_SELECTOR, "selectable-text copyable-text").text
         # ultimo = len(post) - 1
         # texto = driver.find_element_by_css_selector(By.CSS_SELECTOR,'span.selectable-text').text
        
-        print(texto)
+        #print(contact.text)
+        time.sleep(5)
+        print(contact2.text)
 
         
 
 
 def salutation():
-    input = driver.find_element(
-        By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div'
-    )
+    input = driver.find_element(By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div')
     input.click()
-    input.send_keys(
-        ["Bot: Oi, sou o robozin!", "Bot: Use :: no início para falar comigo"]
-    )
+    input.send_keys(["Bot: Oi, sou o robozin!", "Bot: Use :: no início para falar comigo"])
     time.sleep(1)
     input.send_keys(Keys.ENTER)
     time.sleep(1)
@@ -56,18 +59,14 @@ def main():
     driver.get("https://web.whatsapp.com/")
     time.sleep(5)
     while True:
-        if driver.find_elements(
-            By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div[1]/div'
-        ):
+        if driver.find_elements(By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div[1]/div'):
             print("Aguardando conexão...")
             time.sleep(5)
         else:
             print("Conectado")
             time.sleep(20)
             break
-    inputFilter = driver.find_element(
-        By.XPATH, '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]'
-    )
+    inputFilter = driver.find_element(By.XPATH, '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]')
     inputFilter.click()
     inputFilter.send_keys(nameGroup)
     time.sleep(2)
