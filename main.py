@@ -32,14 +32,20 @@ def listening():
         #_33LGR
         contact = driver.find_element(By.CLASS_NAME, '_33LGR')
         time.sleep(1)
-        contact2 = driver.find_element_by_css_selector(By.CSS_SELECTOR, 'selectable-text copyable-text')
+        #contact2 = driver.find_element_by_css_selector(By.CSS_SELECTOR, 'selectable-text copyable-text')
         #texto = driver.find_element(By.CSS_SELECTOR, "selectable-text copyable-text").text
         # ultimo = len(post) - 1
         # texto = driver.find_element_by_css_selector(By.CSS_SELECTOR,'span.selectable-text').text
        
         #print(contact.text)
         time.sleep(5)
-        print(contact2.text)
+        print(contact.text)
+
+        print("Bot: ", contact.text)
+
+        if contact.text == "oi":
+            print("45")
+            
 
         
 
@@ -79,3 +85,15 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+
+
+#while True:
+    #pergunta = input("Usuário: ")
+    #resposta = bot.get_response(pergunta)
+    #if pergunta == 'parar':
+        #break
+    #if float(resposta.confidence) > 0.5:
+        #print('TW Bot: ', resposta)
+    #else:
+        #print('TW Bot: Ainda não sei responder esta pergunta')
